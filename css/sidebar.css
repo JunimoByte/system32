@@ -1,0 +1,130 @@
+#sidebar {
+    width: 200px;
+    min-width: 200px;
+    background: #c0c0c0;
+    border-right: 1px solid #808080;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 8px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.task-pane {
+    background: #c0c0c0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px #000000, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.task-pane-header {
+    height: 20px;
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 0 8px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom: none;
+}
+
+.task-pane-header:hover {
+    filter: brightness(1.08);
+}
+
+.pane-chevron {
+    font-size: 8px;
+    transition: transform 0.12s ease;
+    opacity: 0.85;
+}
+
+.task-pane.collapsed .pane-chevron {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.task-pane-body {
+    padding: 4px 2px;
+}
+
+.task-pane.collapsed .task-pane-body {
+    display: none;
+}
+
+.pane-nav-link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 3px 12px;
+    color: #0000cc;
+    font-size: 10px;
+    text-decoration: none;
+    line-height: 18px;
+}
+
+.pane-nav-link::before {
+    content: "\25B6";
+    font-size: 6px;
+    color: #2f6dba;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 4px;
+}
+
+.pane-nav-link:hover {
+    background: #000080;
+    color: #fff;
+    text-decoration: none;
+}
+
+.pane-nav-link.current {
+    font-weight: bold;
+    color: #000;
+    background: #dfdfdf;
+}
+
+.pane-nav-link.current::before {
+    color: #000000;
+}
+
+
+
+.pane-nav-link.external::before {
+    content: "\27A1";
+    font-size: 8px;
+}
+
+.status-item {
+    padding: 2px 12px;
+    font-size: 10px;
+    color: #666666;
+    line-height: 1.7;
+}
+
+.status-item strong {
+    display: block;
+    color: #000000;
+    font-weight: bold;
+}
+
+.status-divider {
+    height: 1px;
+    background: #dfdfdf;
+    margin: 4px 12px;
+}

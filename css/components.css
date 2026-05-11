@@ -1,0 +1,231 @@
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 8px;
+    border-bottom: 1px solid #dfdfdf;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-row:hover {
+    background: #dfdfdf;
+}
+
+.project-row:focus {
+    background: #000080;
+    color: #fff;
+    outline: 1px dotted #fff;
+}
+
+.project-row:focus .project-name,
+.project-row:focus .project-desc,
+.project-row:focus .project-meta {
+    color: #ffffff;
+}
+
+.project-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: #4fa0e0;
+    border: 1px solid #2f6dba;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.project-icon.icon-green {
+    background: #3a7a38;
+    border-color: #2a5a28;
+}
+
+.project-icon.icon-orange {
+    background: #c87820;
+    border-color: #986010;
+}
+
+.project-icon.icon-purple {
+    background: #6040a8;
+    border-color: #402880;
+}
+
+.project-info {
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
+}
+
+.project-name {
+    font-weight: bold;
+    font-size: 11px;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-desc {
+    font-size: 10px;
+    color: #666666;
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+.project-meta {
+    text-align: right;
+    font-size: 10px;
+    color: #666666;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    line-height: 1.6;
+    margin-left: 8px;
+}
+
+.project-tag {
+    display: inline-block;
+    background: #d0e4f8;
+    border: 1px solid #4fa0e0;
+    padding: 0 3px;
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1e3e9c;
+}
+
+.section-heading {
+    background: #dfdfdf;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #ffffff;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333333;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+.link-list {
+    list-style: none;
+    padding: 0;
+}
+
+.link-list li {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.link-list a {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 4px 8px;
+    font-size: 11px;
+    color: #0000cc;
+    text-decoration: none;
+}
+
+.link-list a::before {
+    content: "\27A1";
+    font-size: 9px;
+    color: #2f6dba;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 6px;
+}
+
+.link-list a:hover {
+    background: #dfdfdf;
+    text-decoration: underline;
+}
+
+.link-list .link-desc {
+    font-size: 10px;
+    color: #666666;
+    margin-top: 2px;
+    padding: 0 8px 4px 22px;
+    display: block;
+}
+
+.info-text {
+    font-size: 11px;
+    line-height: 1.65;
+    color: #333333;
+}
+
+.path-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 10px;
+    color: #666666;
+    padding: 0 0 8px 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.path-bar a {
+    color: #0000cc;
+    text-decoration: none;
+    margin-right: 3px;
+}
+
+.path-bar .sep {
+    color: #808080;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right: 3px;
+}
+
+.badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 4px;
+    border: 1px solid;
+}
+
+.badge-active {
+    background: #d0f0d0;
+    border-color: #40a040;
+    color: #206020;
+}
+
+.badge-wip {
+    background: #ffeeb0;
+    border-color: #c09020;
+    color: #806010;
+}
+
+.badge-done {
+    background: #dde8ff;
+    border-color: #4060c0;
+    color: #2040a0;
+}
+
+.badge-mod {
+    background: #f0ddf0;
+    border-color: #9055a0;
+    color: #602070;
+}

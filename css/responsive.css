@@ -1,0 +1,88 @@
+@media (max-width: 640px) {
+    #main {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100% !important;
+        min-width: 0 !important;
+        border-right: none !important;
+        border-bottom: 1px solid #808080;
+        padding: 4px;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        display: none;
+    }
+
+    #sidebar.open {
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    #sidebar .task-pane {
+        -ms-flex: 1;
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .mobile-menu-toggle {
+        display: -ms-inline-flexbox !important;
+        display: inline-flex !important;
+    }
+
+    #address-bar {
+        display: none;
+    }
+
+    #content {
+        padding: 8px;
+    }
+
+    .project-row {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .project-meta {
+        width: 100%;
+        text-align: left;
+        margin-top: 4px;
+        margin-left: 0;
+    }
+
+    .taskbar-tab {
+        padding: 0 6px;
+        font-size: 10px;
+    }
+
+    .start-btn {
+        font-size: 10px;
+        padding: 0 6px;
+    }
+
+    .win-controls {
+        display: none;
+    }
+}
+
+.mobile-menu-toggle {
+    display: none;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 18px;
+    padding: 0 8px;
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: #fff;
+    border: none;
+    box-shadow: inset -1px -1px #000000, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+    font: bold 10px "Inter", Tahoma, "Segoe UI", Verdana, sans-serif;
+    cursor: pointer;
+    margin: 3px 4px;
+}
+
+.mobile-menu-toggle:active {
+    box-shadow: inset 1px 1px #000000, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+}

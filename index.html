@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Downtown's personal site. Software tools and utilities." />
+  <title>Downtown</title>
+  <link rel="icon" type="image/png" href="assets/png/icon.png" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/windows.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <div id="page">
+
+    <header id="header" role="banner">
+      <span id="site-title">Downtown</span>
+      <div class="win-controls" aria-hidden="true">
+        <button class="win-btn" tabindex="-1" aria-hidden="true">_</button>
+        <button class="win-btn" tabindex="-1" aria-hidden="true">&#9633;</button>
+        <button class="win-btn close-btn" tabindex="-1" aria-hidden="true">&#x2715;</button>
+      </div>
+    </header>
+
+    <nav id="menubar" role="navigation" aria-label="Main navigation">
+      <button class="mobile-menu-toggle" id="sidebar-toggle" aria-expanded="false" aria-controls="sidebar">&#x25BC;
+        Menu</button>
+      <a class="menu-item" href="index.html">Home</a>
+      <a class="menu-item" href="projects.html">Projects</a>
+      <a class="menu-item" href="links.html">Links</a>
+      <a class="menu-item" href="contact.html">Contact</a>
+    </nav>
+
+    <div id="address-bar" aria-hidden="true">
+      <label for="addr">Address</label>
+      <div class="address-input" id="addr" role="presentation">explorer://downtown/index</div>
+    </div>
+
+    <div id="main">
+
+      <aside id="sidebar" aria-label="Navigation sidebar">
+
+        <div class="task-pane" role="navigation" aria-label="Site navigation">
+          <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+            <span>Navigation</span>
+            <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+          </div>
+          <div class="task-pane-body">
+            <a class="pane-nav-link" href="index.html">Home</a>
+            <a class="pane-nav-link" href="projects.html">Projects</a>
+            <a class="pane-nav-link" href="links.html">Links</a>
+            <a class="pane-nav-link" href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="task-pane">
+          <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+            <span>Links</span>
+            <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+          </div>
+          <div class="task-pane-body">
+            <a class="pane-nav-link external" href="https://github.com/JunimoByte?tab=repositories" target="_blank"
+              rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="task-pane">
+          <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+            <span>Status</span>
+            <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+          </div>
+          <div class="task-pane-body">
+            <div class="status-item">
+              <strong>Name</strong>
+              JunimoByte
+            </div>
+            <div class="status-item">
+              <strong>OS</strong>
+              Cachy OS
+            </div>
+            <div class="status-item">
+              <strong>Stack</strong>
+              Python, HTML, C++
+            </div>
+            <div class="status-item">
+              <strong>Focus</strong>
+              Retro Computing
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <main id="content" role="main">
+
+        <article class="win-panel" aria-labelledby="heading-welcome">
+          <div class="win-titlebar">
+
+            <h1 class="win-titlebar-title" id="heading-welcome">Welcome</h1>
+          </div>
+          <div class="win-panel-content">
+            <p class="info-text">
+              Software and systems engineer. I develop some apps and sites when I have downtime, check out my stuff!
+            </p>
+          </div>
+        </article>
+
+        <article class="win-panel" aria-labelledby="heading-projects">
+          <div class="win-titlebar">
+
+            <h2 class="win-titlebar-title" id="heading-projects">Projects</h2>
+          </div>
+          <ul class="project-list" role="list">
+
+            <li role="listitem">
+              <a class="project-row" href="https://junimobyte.github.io/atlas-website/" target="_blank"
+                rel="noopener noreferrer">
+                <div class="project-icon" aria-hidden="true">A</div>
+                <div class="project-info">
+                  <div class="project-name">Atlas</div>
+                  <div class="project-desc">Desktop browser snapshot application for Windows and Linux.</div>
+                </div>
+                <div class="project-meta">
+                  <span class="project-tag">APP</span><br />
+                  Windows 7 / 10
+                </div>
+              </a>
+            </li>
+
+
+
+            <li role="listitem">
+              <a class="project-row" href="projects.html">
+                <div class="project-icon icon-green" aria-hidden="true">+</div>
+                <div class="project-info">
+                  <div class="project-name">All projects</div>
+                  <div class="project-desc">View the full list.</div>
+                </div>
+                <div class="project-meta"></div>
+              </a>
+            </li>
+
+          </ul>
+        </article>
+
+        <article class="win-panel" aria-labelledby="heading-notes">
+          <div class="win-titlebar">
+            <h2 class="win-titlebar-title" id="heading-notes">Notes</h2>
+          </div>
+          <div class="win-panel-content">
+            <p class="info-text" style="color:var(--t-muted); font-style:italic;">No recent notes.</p>
+          </div>
+        </article>
+
+      </main>
+    </div>
+
+    <div id="statusbar" aria-hidden="true">
+      <span class="sbar-cell">Ready</span>
+    </div>
+
+    <footer id="taskbar" role="contentinfo">
+      <button class="start-btn" aria-label="Start" tabindex="-1" aria-hidden="true"><b>Start</b></button>
+      <div class="taskbar-sep" aria-hidden="true"></div>
+      <a class="taskbar-tab" href="index.html" data-page="index.html">Home</a>
+      <a class="taskbar-tab" href="projects.html" data-page="projects.html">Projects</a>
+      <a class="taskbar-tab" href="links.html" data-page="links.html">Links</a>
+      <a class="taskbar-tab" href="contact.html" data-page="contact.html">Contact</a>
+      <div class="system-tray">
+        <span class="tray-clock" id="tray-clock" role="timer" aria-label="Current time">--:--</span>
+      </div>
+    </footer>
+
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>
