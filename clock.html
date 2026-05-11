@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JunimoByte's personal site. Clock and Date Properties." />
+  <title>JunimoByte</title>
+  <link rel="icon" type="image/png" href="assets/png/icon.png" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/windows.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/clock.css" />
+</head>
+
+<body>
+  <div id="page">
+
+    <header id="header" role="banner">
+      <span id="site-title">JunimoByte</span>
+      <div class="win-controls" aria-hidden="true">
+        <button class="win-btn" tabindex="-1" aria-hidden="true">_</button>
+        <button class="win-btn" tabindex="-1" aria-hidden="true">&#9633;</button>
+        <button class="win-btn close-btn" tabindex="-1" aria-hidden="true">&#x2715;</button>
+      </div>
+    </header>
+
+    <nav id="menubar" role="navigation" aria-label="Main navigation">
+      <button class="mobile-menu-toggle" id="sidebar-toggle" aria-expanded="false" aria-controls="sidebar">&#x25BC;
+        Menu</button>
+      <a class="menu-item" href="index.html">Home</a>
+      <a class="menu-item" href="projects.html">Projects</a>
+      <a class="menu-item" href="links.html">Links</a>
+      <a class="menu-item" href="contact.html">Contact</a>
+      <a class="menu-item" href="clock.html">Clock</a>
+    </nav>
+
+    <div id="address-bar" aria-hidden="true">
+      <label for="addr">Address</label>
+      <div class="address-input" id="addr" role="presentation">explorer://junimobyte/clock</div>
+    </div>
+
+    <div id="main">
+
+      <aside id="sidebar" aria-label="Navigation sidebar">
+
+        <div class="task-pane" role="navigation" aria-label="Site navigation">
+          <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+            <span>Navigation</span>
+            <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+          </div>
+          <div class="task-pane-body">
+            <a class="pane-nav-link" href="index.html">Home</a>
+            <a class="pane-nav-link" href="projects.html">Projects</a>
+            <a class="pane-nav-link" href="links.html">Links</a>
+            <a class="pane-nav-link" href="contact.html">Contact</a>
+            <a class="pane-nav-link" href="clock.html">Clock</a>
+          </div>
+        </div>
+
+        <div class="task-pane">
+          <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+            <span>Links</span>
+            <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+          </div>
+          <div class="task-pane-body">
+            <a class="pane-nav-link external" href="https://github.com/JunimoByte?tab=repositories" target="_blank"
+              rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="task-pane">
+          <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+            <span>Status</span>
+            <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+          </div>
+          <div class="task-pane-body">
+            <div class="status-item">
+              <strong>Name</strong>
+              JunimoByte
+            </div>
+            <div class="status-item">
+              <strong>OS</strong>
+              Cachy OS
+            </div>
+            <div class="status-item">
+              <strong>Stack</strong>
+              Python, HTML, C++
+            </div>
+            <div class="status-item">
+              <strong>Focus</strong>
+              Retro Computing
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <main id="content" role="main">
+
+        <article class="win-panel fill-content" aria-labelledby="heading-clock">
+          <div class="win-titlebar">
+            <h1 class="win-titlebar-title" id="heading-clock">Date/Time Properties</h1>
+          </div>
+
+          <div class="win-panel-content">
+            <div class="tabs-container">
+              <div class="tab-headers" id="clock-tabs">
+                <button class="tab-header active" data-tab="datetime">Date & Time</button>
+                <button class="tab-header" data-tab="timezone">Time Zone</button>
+                <button class="tab-header" data-tab="system">System Info</button>
+              </div>
+              <div class="tab-body active" id="tab-datetime">
+                <div class="properties-grid">
+                  <div class="property-group">
+                    <fieldset class="win-fieldset">
+                      <legend>Date</legend>
+                      <div class="calendar-controls">
+                        <select id="month-select" class="win-select" disabled>
+                          <option>January</option>
+                          <option>February</option>
+                          <option>March</option>
+                          <option>April</option>
+                          <option>May</option>
+                          <option>June</option>
+                          <option>July</option>
+                          <option>August</option>
+                          <option>September</option>
+                          <option>October</option>
+                          <option>November</option>
+                          <option>December</option>
+                        </select>
+                        <div class="spinner-box">
+                          <input type="text" id="year-input" class="win-input" value="1998" readonly />
+                          <div class="spinner-controls">
+                            <button class="spinner-btn up" disabled>▲</button>
+                            <button class="spinner-btn down" disabled>▼</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="calendar-view">
+                        <table id="calendar-table">
+                          <thead>
+                            <tr>
+                              <th>M</th>
+                              <th>Tu</th>
+                              <th>W</th>
+                              <th>Th</th>
+                              <th>F</th>
+                              <th>Sa</th>
+                              <th>Su</th>
+                            </tr>
+                          </thead>
+                          <tbody id="calendar-body">
+                          </tbody>
+                        </table>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="property-group">
+                    <fieldset class="win-fieldset">
+                      <legend>Time</legend>
+                      <div class="clock-display">
+                        <div class="analog-clock shadow-bezel">
+                          <svg viewBox="0 0 100 100" id="analog-clock-svg">
+                            <circle cx="50" cy="50" r="48" fill="#fff" stroke="none" />
+                            <g id="clock-ticks"></g>
+                            <line id="hour-hand" x1="50" y1="50" x2="50" y2="30" stroke="#000" stroke-width="2.5"
+                              stroke-linecap="round" />
+                            <line id="minute-hand" x1="50" y1="50" x2="50" y2="20" stroke="#000" stroke-width="2"
+                              stroke-linecap="round" />
+                            <line id="second-hand" x1="50" y1="50" x2="50" y2="15" stroke="#008080" stroke-width="1"
+                              stroke-linecap="round" />
+                            <circle cx="50" cy="50" r="2" fill="#000" />
+                          </svg>
+                        </div>
+                        <div class="digital-time-container">
+                          <div class="spinner-box digital-box">
+                            <span id="digital-time">12:00:00 AM</span>
+                            <div class="spinner-controls">
+                              <button class="spinner-btn up" disabled>▲</button>
+                              <button class="spinner-btn down" disabled>▼</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="time-zone-info">
+                  Current time zone: <span id="tz-name">Local Time</span>
+                </div>
+              </div>
+              <div class="tab-body" id="tab-timezone">
+                <div class="property-group" style="margin-top: 4px;">
+                  <select class="win-select" style="width: 100%;" disabled>
+                    <option id="tz-option-current">(GMT) Current Time Zone</option>
+                  </select>
+                </div>
+                <div class="win-checkbox-row">
+                  <input type="checkbox" id="dst" checked disabled />
+                  <label for="dst">Automatically adjust clock for daylight saving changes</label>
+                </div>
+                <div class="property-group"
+                  style="margin-top: 16px; border-top: 1px dotted #808080; padding-top: 16px;">
+                  <div class="status-row">
+                    <span class="label">Status:</span>
+                    <span class="value">Daylight Saving Time is in effect.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-body" id="tab-system">
+                <div class="property-group">
+                  <fieldset class="win-fieldset">
+                    <legend>System Status</legend>
+                    <div class="status-list">
+                      <div class="status-row">
+                        <span class="label">Uptime:</span>
+                        <span class="value" id="uptime-val">00:00:00</span>
+                      </div>
+                      <div class="status-row">
+                        <span class="label">OS:</span>
+                        <span class="value">Cachy OS</span>
+                      </div>
+                      <div class="status-row">
+                        <span class="label">Kernel:</span>
+                        <span class="value">Linux 6.18-lts</span>
+                      </div>
+                      <div class="status-row">
+                        <span class="label">Processor:</span>
+                        <span class="value">Intel(R) Core(TM) i9-14900KS</span>
+                      </div>
+                      <div class="status-row">
+                        <span class="label">GPU:</span>
+                        <span class="value">NVIDIA GeForce RTX 4070 Super</span>
+                      </div>
+                      <div class="status-row">
+                        <span class="label">Memory:</span>
+                        <span class="value">32.0 GB</span>
+                      </div>
+                      <div class="status-row">
+                        <span class="label">System ID:</span>
+                        <span class="value">JUNIMOBYTE-CORE-01</span>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+      </main>
+    </div>
+
+    <div id="statusbar" aria-hidden="true">
+      <span class="sbar-cell">Ready</span>
+    </div>
+
+    <footer id="taskbar" role="contentinfo">
+      <button class="start-btn" aria-label="Start" tabindex="-1" aria-hidden="true"><b>Start</b></button>
+      <div class="taskbar-sep" aria-hidden="true"></div>
+      <a class="taskbar-tab" href="index.html" data-page="index.html">Home</a>
+      <a class="taskbar-tab" href="projects.html" data-page="projects.html">Projects</a>
+      <a class="taskbar-tab" href="links.html" data-page="links.html">Links</a>
+      <a class="taskbar-tab" href="contact.html" data-page="contact.html">Contact</a>
+      <a class="taskbar-tab" href="clock.html" data-page="clock.html">Clock</a>
+      <div class="system-tray">
+        <span class="tray-clock" id="tray-clock" role="timer" aria-label="Current time">--:--</span>
+      </div>
+    </footer>
+
+  </div>
+  <script src="js/main.js" defer></script>
+  <script src="js/clock.js" defer></script>
+</body>
+
+</html>

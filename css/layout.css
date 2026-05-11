@@ -199,7 +199,9 @@ html {
     box-shadow: inset 1px 1px #000000, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
 }
 
-.taskbar-tab:hover {
+.taskbar-tab:hover,
+.taskbar-tab:visited {
+    color: #000;
     text-decoration: none;
 }
 

@@ -1,0 +1,275 @@
+.fill-content {
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 200px);
+    /* Ensure it stretches in main area */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.fill-content .win-panel-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.tabs-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-headers {
+    display: flex;
+    padding-left: 2px;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 10;
+}
+
+.tab-header {
+    padding: 4px 16px;
+    background: #c0c0c0;
+    font-size: 11px;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #808080;
+    margin-right: 2px;
+    cursor: default;
+    border-bottom: 1px solid #808080;
+    white-space: nowrap;
+}
+
+.tab-header:focus {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+}
+
+.tab-header.active {
+    padding-bottom: 5px;
+    margin-bottom: -1px;
+    border-bottom: none;
+    border-right: 1px solid #000;
+    box-shadow: 1px 0 #808080;
+    background: #c0c0c0;
+    z-index: 11;
+}
+
+.tab-body {
+    display: none;
+    background: #c0c0c0;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    box-shadow: 1px 1px #000, -1px -1px #dfdfdf inset;
+    padding: 20px;
+    flex: 1;
+}
+
+.tab-body.active {
+    display: block;
+}
+
+/* Checkbox Row */
+.win-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 11px;
+}
+
+/* Status List */
+.status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    border-bottom: 1px dotted #808080;
+    padding-bottom: 2px;
+}
+
+.status-row .label {
+    font-weight: bold;
+    color: #444;
+}
+
+.properties-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.win-fieldset {
+    border: 1px solid #ffffff;
+    box-shadow: -1px -1px #808080;
+    padding: 16px;
+    margin: 0;
+    position: relative;
+}
+
+.win-fieldset legend {
+    font-size: 11px;
+    padding: 0 6px;
+    background: #c0c0c0;
+    /* Covers the top border line */
+    margin-left: 8px;
+}
+
+/* Calendar Styling */
+.calendar-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.win-select {
+    font-size: 11px;
+    padding: 2px;
+    background: #fff;
+    border: 1px solid #000;
+    box-shadow: inset 1px 1px #808080;
+    flex: 1;
+}
+
+.spinner-box {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #000;
+    box-shadow: inset 1px 1px #808080;
+}
+
+.win-input {
+    border: none;
+    width: 40px;
+    padding: 2px 4px;
+    font-size: 11px;
+    text-align: right;
+    outline: none;
+}
+
+.spinner-controls {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #808080;
+}
+
+.spinner-btn {
+    width: 16px;
+    height: 10px;
+    font-size: 6px;
+    line-height: 8px;
+    background: #c0c0c0;
+    border: none;
+    box-shadow: inset 1px 1px #fff, inset -1px -1px #808080;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.calendar-view {
+    max-width: 250px;
+    /* Constrain on PC */
+    margin: 0 auto;
+}
+
+.calendar-view table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #808080;
+    box-shadow: inset 1px 1px #000;
+}
+
+.calendar-view th {
+    font-size: 10px;
+    font-weight: normal;
+    color: #666;
+    background: #dfdfdf;
+    border: 1px solid #808080;
+    padding: 2px;
+}
+
+.calendar-view td {
+    width: 14.28%;
+    text-align: center;
+    font-size: 11px;
+    padding: 2px;
+    cursor: default;
+}
+
+.calendar-view td.today {
+    background: #000080;
+    color: #fff;
+}
+
+.calendar-view td.empty {
+    visibility: hidden;
+}
+
+/* Clock Styling */
+.clock-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.analog-clock {
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.shadow-bezel {
+    box-shadow: inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+    padding: 2px;
+}
+
+.digital-box {
+    padding: 2px 8px;
+    min-width: 100px;
+    justify-content: space-between;
+}
+
+#digital-time {
+    font-size: 11px;
+    font-family: 'Inter', Tahoma, sans-serif;
+}
+
+.time-zone-info {
+    font-size: 11px;
+    padding-top: 12px;
+    /* Fix spacing */
+    border-top: 1px dotted #808080;
+    margin-top: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-view {
+        max-width: 100%;
+    }
+
+    .fill-content {
+        min-height: auto;
+    }
+}

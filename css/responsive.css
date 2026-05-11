@@ -74,7 +74,9 @@
     align-items: center;
     height: 18px;
     padding: 0 8px;
-    background: linear-gradient(to right, #000080, #1084d0);
+    background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+    background-size: 200% 100%;
+    background-position: left center;
     color: #fff;
     border: none;
     box-shadow: inset -1px -1px #000000, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
