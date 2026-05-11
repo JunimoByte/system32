@@ -1,20 +1,34 @@
 (function () {
     "use strict";
 
+    function pad(str, targetLength) {
+        str = String(str);
+        while (str.length < targetLength) {
+            str = "0" + str;
+        }
+        return str;
+    }
+
+    function forEach(list, callback) {
+        for (var i = 0; i < list.length; i++) {
+            callback(list[i], i);
+        }
+    }
+
     function initTabs() {
         var tabHeaders = document.querySelectorAll('#clock-tabs .tab-header');
         var tabBodies = document.querySelectorAll('.tab-body');
 
-        tabHeaders.forEach(function (header) {
+        forEach(tabHeaders, function (header) {
             header.addEventListener('click', function () {
-                var target = header.dataset.tab;
+                var target = header.getAttribute('data-tab');
 
-                tabHeaders.forEach(function (h) { h.classList.remove('active'); });
-                tabBodies.forEach(function (b) { b.classList.remove('active'); });
+                forEach(tabHeaders, function (h) { h.className = h.className.replace(' active', '').replace('active', ''); });
+                forEach(tabBodies, function (b) { b.className = b.className.replace(' active', '').replace('active', ''); });
 
-                header.classList.add('active');
+                header.className += ' active';
                 var activeBody = document.getElementById('tab-' + target);
-                if (activeBody) activeBody.classList.add('active');
+                if (activeBody) activeBody.className += ' active';
             });
         });
     }
@@ -23,18 +37,18 @@
         var uptimeVal = document.getElementById('uptime-val');
         if (!uptimeVal) return;
 
-        var startTime = Date.now();
+        var startTime = new Date().getTime();
 
         function updateUptime() {
-            var diff = Date.now() - startTime;
+            var diff = new Date().getTime() - startTime;
             var secs = Math.floor(diff / 1000) % 60;
             var mins = Math.floor(diff / (1000 * 60)) % 60;
             var hrs = Math.floor(diff / (1000 * 60 * 60));
 
             uptimeVal.textContent =
-                String(hrs).padStart(2, '0') + ":" +
-                String(mins).padStart(2, '0') + ":" +
-                String(secs).padStart(2, '0');
+                pad(hrs, 2) + ":" +
+                pad(mins, 2) + ":" +
+                pad(secs, 2);
         }
 
         setInterval(updateUptime, 1000);
@@ -67,23 +81,22 @@
                 tick.setAttribute("y1", y1);
                 tick.setAttribute("x2", x2);
                 tick.setAttribute("y2", y2);
-                tick.setAttribute("stroke", isMajor ? "#000" : "#808080");
+                tick.setAttribute("stroke", isMajor ? "#000000" : "#808080");
                 tick.setAttribute("stroke-width", isMajor ? "1.5" : "0.5");
                 clockTicks.appendChild(tick);
             }
         }
 
-        // Display Time Zone
         if (tzName || tzOption) {
             try {
-                var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                var offset = new Date().getTimezoneOffset();
+                var now = new Date();
+                var offset = now.getTimezoneOffset();
                 var absOffset = Math.abs(offset);
                 var offsetStr = (offset <= 0 ? '+' : '-') +
-                    String(Math.floor(absOffset / 60)).padStart(2, '0') + ":" +
-                    String(absOffset % 60).padStart(2, '0');
+                    pad(Math.floor(absOffset / 60), 2) + ":" +
+                    pad(absOffset % 60, 2);
 
-                var fullTzName = "(GMT" + offsetStr + ") " + tz.replace(/_/g, ' ');
+                var fullTzName = "(GMT" + offsetStr + ") Local Time";
                 if (tzName) tzName.textContent = fullTzName;
                 if (tzOption) tzOption.textContent = fullTzName;
             } catch (e) {
@@ -102,9 +115,10 @@
             var minAngle = minutes * 6 + seconds * 0.1;
             var secAngle = seconds * 6 + milliseconds * 0.006;
 
-            if (hourHand) hourHand.setAttribute('transform', 'rotate(' + hrAngle + ', 50, 50)');
-            if (minHand) minHand.setAttribute('transform', 'rotate(' + minAngle + ', 50, 50)');
-            if (secHand) secHand.setAttribute('transform', 'rotate(' + secAngle + ', 50, 50)');
+            // In IE10, SVG transform attribute is preferred over CSS
+            if (hourHand) hourHand.setAttribute('transform', 'rotate(' + hrAngle + ' 50 50)');
+            if (minHand) minHand.setAttribute('transform', 'rotate(' + minAngle + ' 50 50)');
+            if (secHand) secHand.setAttribute('transform', 'rotate(' + secAngle + ' 50 50)');
 
             if (digitalTime) {
                 var ampm = hours >= 12 ? 'PM' : 'AM';
@@ -112,11 +126,15 @@
                 dispHours = dispHours ? dispHours : 12;
                 digitalTime.textContent =
                     dispHours + ":" +
-                    String(minutes).padStart(2, '0') + ":" +
-                    String(seconds).padStart(2, '0') + " " + ampm;
+                    pad(minutes, 2) + ":" +
+                    pad(seconds, 2) + " " + ampm;
             }
 
-            requestAnimationFrame(update);
+            if (window.requestAnimationFrame) {
+                window.requestAnimationFrame(update);
+            } else {
+                setTimeout(update, 16);
+            }
         }
 
         update();
@@ -140,6 +158,7 @@
         function renderMonth(month, year) {
             tableBody.innerHTML = '';
             var firstDay = new Date(year, month, 1).getDay();
+            // Adjust for Monday start
             firstDay = (firstDay === 0) ? 6 : firstDay - 1;
 
             var daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -150,13 +169,13 @@
                 for (var j = 0; j < 7; j++) {
                     var cell = document.createElement('td');
                     if (i === 0 && j < firstDay) {
-                        cell.classList.add('empty');
+                        cell.className = 'empty';
                     } else if (date > daysInMonth) {
-                        cell.classList.add('empty');
+                        cell.className = 'empty';
                     } else {
                         cell.textContent = date;
                         if (date === today && month === now.getMonth() && year === now.getFullYear()) {
-                            cell.classList.add('today');
+                            cell.className = 'today';
                         }
                         date++;
                     }
@@ -170,10 +189,20 @@
         renderMonth(currentMonth, currentYear);
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        initTabs();
-        initUptime();
-        initClock();
-        initCalendar();
-    });
+    if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', function () {
+            initTabs();
+            initUptime();
+            initClock();
+            initCalendar();
+        });
+    } else {
+        // IE8 fallback
+        window.onload = function () {
+            initTabs();
+            initUptime();
+            initClock();
+            initCalendar();
+        };
+    }
 })();

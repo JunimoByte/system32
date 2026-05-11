@@ -4,24 +4,33 @@
     min-height: calc(100vh - 200px);
     /* Ensure it stretches in main area */
     margin: 0;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 .fill-content .win-panel-content {
+    -ms-flex: 1;
     flex: 1;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
     padding: 12px;
 }
 
 .tabs-container {
+    -ms-flex: 1;
     flex: 1;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
 .tab-headers {
+    display: -ms-flexbox;
     display: flex;
     padding-left: 2px;
     margin-bottom: -1px;
@@ -66,6 +75,7 @@
     border-bottom: 1px solid #808080;
     box-shadow: 1px 1px #000, -1px -1px #dfdfdf inset;
     padding: 20px;
+    -ms-flex: 1;
     flex: 1;
 }
 
@@ -75,7 +85,9 @@
 
 /* Checkbox Row */
 .win-checkbox-row {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
     align-items: center;
     gap: 8px;
     margin-top: 12px;
@@ -84,13 +96,17 @@
 
 /* Status List */
 .status-list {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 8px;
 }
 
 .status-row {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     font-size: 11px;
     border-bottom: 1px dotted #808080;
@@ -103,10 +119,32 @@
 }
 
 .properties-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: -ms-flexbox;
+    display: flex;
     gap: 16px;
     margin-bottom: 12px;
+}
+
+.property-group {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* Fallback for IE flex gap */
+.properties-grid>*+* {
+    margin-left: 16px;
+}
+
+@media (max-width: 600px) {
+    .properties-grid {
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .properties-grid>*+* {
+        margin-left: 0;
+        margin-top: 16px;
+    }
 }
 
 .win-fieldset {
@@ -127,6 +165,7 @@
 
 /* Calendar Styling */
 .calendar-controls {
+    display: -ms-flexbox;
     display: flex;
     gap: 8px;
     margin-bottom: 12px;
@@ -138,11 +177,14 @@
     background: #fff;
     border: 1px solid #000;
     box-shadow: inset 1px 1px #808080;
+    -ms-flex: 1;
     flex: 1;
 }
 
 .spinner-box {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
     align-items: center;
     background: #fff;
     border: 1px solid #000;
@@ -159,7 +201,9 @@
 }
 
 .spinner-controls {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
     border-left: 1px solid #808080;
 }
@@ -173,8 +217,11 @@
     border: none;
     box-shadow: inset 1px 1px #fff, inset -1px -1px #808080;
     cursor: default;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: center;
     justify-content: center;
     padding: 0;
 }
@@ -221,8 +268,11 @@
 
 /* Clock Styling */
 .clock-display {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-align: center;
     align-items: center;
     gap: 12px;
 }
@@ -262,7 +312,8 @@
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .properties-grid {
-        grid-template-columns: 1fr;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
     .calendar-view {
