@@ -1,0 +1,248 @@
+<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JunimoByte's personal site - Page Not Found." />
+    <title>JunimoByte</title>
+    <link rel="icon" type="image/png" href="assets/png/icon.png" />
+    <link rel="stylesheet" href="css/core.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/windows.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+        .error-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+            padding: 40px 10px;
+        }
+
+        .error-dialog {
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .error-content {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+        }
+
+        .error-icon {
+            width: 32px;
+            height: 32px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #fff;
+            font-size: 20px;
+            flex-shrink: 0;
+            border: 2px solid #fff;
+            box-shadow: 1px 1px #000;
+            line-height: 1;
+        }
+
+        .error-text {
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .error-footer {
+            display: flex;
+            justify-content: center;
+            padding: 12px;
+            background: #c0c0c0;
+        }
+
+        .ok-btn {
+            min-width: 75px;
+            height: 23px;
+            background: #c0c0c0;
+            border: none;
+            box-shadow: inset -1px -1px #000000, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .ok-btn:active {
+            box-shadow: inset 1px 1px #000000, inset -1px -1px #ffffff, inset 2px 2px #808080, inset -2px -2px #dfdfdf;
+            padding-top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+
+        <header id="header" role="banner">
+            <span id="site-title">JunimoByte</span>
+            <div class="win-controls" aria-hidden="true">
+                <button class="win-btn" tabindex="-1" aria-hidden="true">_</button>
+                <button class="win-btn" tabindex="-1" aria-hidden="true">&#9633;</button>
+                <button class="win-btn close-btn" tabindex="-1" aria-hidden="true">&#x2715;</button>
+            </div>
+        </header>
+
+        <nav id="menubar" role="navigation" aria-label="Main navigation">
+            <button class="mobile-menu-toggle" id="sidebar-toggle" aria-expanded="false"
+                aria-controls="sidebar">&#x25BC;
+                Menu</button>
+            <a class="menu-item" href="index.html">Home</a>
+            <a class="menu-item" href="projects.html">Projects</a>
+            <a class="menu-item" href="links.html">Links</a>
+            <a class="menu-item" href="contact.html">Contact</a>
+            <a class="menu-item" href="clock.html">Clock</a>
+        </nav>
+
+        <div id="address-bar" aria-hidden="true">
+            <label for="addr">Address</label>
+            <div class="address-input" id="addr" role="presentation">explorer://junimobyte/404_not_found</div>
+        </div>
+
+        <div id="main">
+
+            <aside id="sidebar" aria-label="Navigation sidebar">
+
+                <div class="task-pane" role="navigation" aria-label="Site navigation">
+                    <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+                        <span>Navigation</span>
+                        <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+                    </div>
+                    <div class="task-pane-body">
+                        <a class="pane-nav-link" href="index.html">Home</a>
+                        <a class="pane-nav-link" href="projects.html">Projects</a>
+                        <a class="pane-nav-link" href="links.html">Links</a>
+                        <a class="pane-nav-link" href="contact.html">Contact</a>
+                        <a class="pane-nav-link" href="clock.html">Clock</a>
+                    </div>
+                </div>
+
+                <div class="task-pane">
+                    <div class="task-pane-header" role="button" tabindex="0" aria-expanded="true">
+                        <span>Status</span>
+                        <span class="pane-chevron" aria-hidden="true">&#x25BC;</span>
+                    </div>
+                    <div class="task-pane-body">
+                        <div class="status-item">
+                            <strong>Name</strong>
+                            JunimoByte
+                        </div>
+                        <div class="status-item">
+                            <strong>OS</strong>
+                            Cachy OS
+                        </div>
+                        <div class="status-item">
+                            <strong>Stack</strong>
+                            Python, HTML, C++
+                        </div>
+                        <div class="status-item">
+                            <strong>Focus</strong>
+                            Retro Computing
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <main id="content" role="main">
+
+                <article class="win-panel" aria-labelledby="heading-error">
+                    <div class="win-titlebar">
+                        <h1 class="win-titlebar-title" id="heading-error">404 - File Not Found</h1>
+                    </div>
+                    <div class="win-panel-content">
+                        <div style="display: flex; gap: 16px; align-items: flex-start;">
+                            <div class="error-icon" style="margin-top: 4px;" aria-hidden="true">X</div>
+                            <div>
+                                <p class="info-text" style="font-weight: bold; margin-bottom: 8px;">
+                                    The page you requested could not be located on this server.
+                                </p>
+                                <p class="info-text">
+                                    This might be because the link you followed is broken, the page has been moved or
+                                    deleted, or you typed the address incorrectly.
+                                </p>
+                                <div style="margin-top: 16px;">
+                                    <button class="ok-btn" onclick="window.location.href='index.html'">Go to
+                                        Home</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="win-panel" aria-labelledby="heading-troubleshoot">
+                    <div class="win-titlebar">
+                        <h2 class="win-titlebar-title" id="heading-troubleshoot">Troubleshooting</h2>
+                    </div>
+                    <div class="win-panel-content">
+                        <ul class="info-text" style="margin: 0; padding-left: 20px;">
+                            <li>Check the address in the browser's address bar for typos.</li>
+                            <li>Ensure you have a stable network connection.</li>
+                            <li>Refresh the page to try again.</li>
+                            <li>If you believe this is a server error, please contact the administrator.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="win-panel" aria-labelledby="heading-suggested">
+                    <div class="win-titlebar">
+                        <h2 class="win-titlebar-title" id="heading-suggested">Suggested Links</h2>
+                    </div>
+                    <ul class="project-list" role="list">
+                        <li role="listitem">
+                            <a class="project-row" href="index.html">
+                                <div class="project-icon" aria-hidden="true">H</div>
+                                <div class="project-info">
+                                    <div class="project-name">Home</div>
+                                    <div class="project-desc">Return to the start page.</div>
+                                </div>
+                                <div class="project-meta"></div>
+                            </a>
+                        </li>
+                        <li role="listitem">
+                            <a class="project-row" href="projects.html">
+                                <div class="project-icon icon-green" aria-hidden="true">P</div>
+                                <div class="project-info">
+                                    <div class="project-name">Projects</div>
+                                    <div class="project-desc">Everything I've built.</div>
+                                </div>
+                                <div class="project-meta"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+
+            </main>
+        </div>
+
+        <div id="statusbar" aria-hidden="true">
+            <span class="sbar-cell">Idle</span>
+        </div>
+
+        <footer id="taskbar" role="contentinfo">
+            <button class="start-btn" aria-label="Start" tabindex="-1" aria-hidden="true"><b>Start</b></button>
+            <div class="taskbar-sep" aria-hidden="true"></div>
+            <a class="taskbar-tab" href="index.html">Home</a>
+            <a class="taskbar-tab" href="projects.html">Projects</a>
+            <a class="taskbar-tab" href="links.html">Links</a>
+            <a class="taskbar-tab" href="contact.html">Contact</a>
+            <a class="taskbar-tab" href="clock.html">Clock</a>
+            <div class="system-tray">
+                <span class="tray-clock" id="tray-clock" role="timer" aria-label="Current time">--:--</span>
+            </div>
+        </footer>
+
+    </div>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
