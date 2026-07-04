@@ -164,6 +164,30 @@
     color: #1e3e9c;
 }
 
+.project-tag.tag-orange {
+    background: #f8e2c9;
+    border: 1px solid #d98b2b;
+    color: #b25e00;
+}
+
+.project-tag.tag-green {
+    background: #d9f2dc;
+    border: 1px solid #5fae63;
+    color: #2e7d32;
+}
+
+.project-tag.tag-red {
+    background: #f8d7d7;
+    border: 1px solid #d46a6a;
+    color: #b12a2a;
+}
+
+.project-tag.tag-yellow {
+    background: #f9efc8;
+    border: 1px solid #d8c04a;
+    color: #9a7a00;
+}
+
 .section-heading {
     background: #dfdfdf;
     border-top: 1px solid #808080;
