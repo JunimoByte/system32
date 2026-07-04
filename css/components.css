@@ -65,6 +65,61 @@
     border-color: #402880;
 }
 
+.project-icon.icon-pink {
+    background: #d65a9c;
+    border-color: #a63d73;
+}
+
+.project-icon.icon-yellow {
+    background: #d4b020;
+    border-color: #a38412;
+}
+
+.project-icon.icon-red {
+    background: #c94b4b;
+    border-color: #963232;
+}
+
+.project-icon.icon-blue {
+    background: #3f82d8;
+    border-color: #2b5fa6;
+}
+
+.project-icon.icon-cyan {
+    background: #36b5c8;
+    border-color: #248a99;
+}
+
+.project-icon.icon-teal {
+    background: #2f9b84;
+    border-color: #22715f;
+}
+
+.project-icon.icon-indigo {
+    background: #4e5fd1;
+    border-color: #3948a3;
+}
+
+.project-icon.icon-lime {
+    background: #7cbf32;
+    border-color: #5d9224;
+}
+
+.project-icon.icon-brown {
+    background: #8b5a3c;
+    border-color: #68412b;
+}
+
+.project-icon.icon-gray {
+    background: #727b86;
+    border-color: #555c64;
+}
+
+.project-icon.icon-black {
+    background: #3a3a3a;
+    border-color: #1f1f1f;
+}
+
 .project-info {
     -ms-flex: 1;
     flex: 1;
